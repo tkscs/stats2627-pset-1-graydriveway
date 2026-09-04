@@ -1,0 +1,12 @@
+schema: "classroom50/repo-config/v1"
+classroom: "stats2627"
+assignment: "pset-1"
+owner:
+  username: "graydriveway"
+  id: 308549674
+  accepted_at: "2026-09-04T18:35:26Z"
+source:
+  owner: "tkscs"
+  owner_id: 215133286
+  repo: "stats_pset1"
+  branch: "main"
