@@ -1,0 +1,80 @@
+---
+title: "pset1"
+format: html
+---
+
+# KAT Statistics Problem Set #1
+
+## Introduction
+
+Let's use what we know about graphing categorical and quantitative data to explore some real marine biology data compiled from several sources into a single dataset here: https://www.kaggle.com/datasets/maulikgajera/aquatic-wildlife-atlas-global-species-records.
+
+```{r}
+library(tidyverse)
+library(ggplot2)
+library(janitor)
+aquatic_animals = read_csv("aquatic_animals_200k.csv") |> clean_names()
+```
+
+First, look at the data.
+
+```{r}
+aquatic_animals
+```
+
+There are lots of variables in this dataset. We can look at a summary of each variable like this:
+
+```{r}
+glimpse(aquatic_animals)
+```
+
+**Question 1: What do you notice about the variables labeled `<dbl>` versus the variables labeled `<chr>`?**
+
+\[your answer here\]
+
+## Categorical Data
+
+Choose one categorical variable and make a barplot.
+
+(Because we haven't already calculated the frequencies into a separate column, we can use `geom_bar` instead of `geom_col`)
+
+```{r}
+aquatic_animals |> 
+  ggplot() +
+  aes(x = YOUR_CATEGORICAL_VARIABLE_HERE) +
+  geom_bar()
+```
+
+Now pick two categorical variables and make a stacked barplot.
+
+```{r}
+aquatic_animals |> 
+  ggplot() +
+  aes(x = ONE_CATEGORICAL_VARIABLE, fill = ANOTHER_CATEGORICAL_VARIABLE) +
+  geom_bar()
+```
+
+**Question 2: Are the two variables that you chose independent or associated? Explain.**
+
+\[your answer here\]
+
+## Quantitative Data
+
+Choose one quantitative variable and make a histogram.
+
+```{r}
+aquatic_animals |> 
+  ggplot() +
+  aes(x = YOUR_QUANTITATIVE_VARIABLE) +
+  geom_histogram()
+```
+
+**Question 3: Describe the distribution of your quantitative variable:**
+
+Remember to comment on shape, center, spread, outliers, and context.
+
+\[your answer here\]
+
+## Explore
+
+If you have any extra time, feel free to explore different variables in the dataset. If you want to make a new code block for yourself, the keyboard shortcut is Cmd + Shift + i.
